@@ -10,8 +10,7 @@
   },
   "keywords": [],
   "author": "Garen Yondem",
-  "license": "UNLICENSED",
-  "private": true,
+  "license": "MIT",
   "dependencies": {
     "@koa/cors": "^3.0.0",
     "dotenv": "^8.2.0",
