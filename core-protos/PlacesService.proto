@@ -1,0 +1,90 @@
+syntax = "proto3";
+package Core.Backend;
+
+import "Point.proto";
+import "Place.proto";
+import "Song.proto";
+import "Timeframe.proto";
+import "Photo.proto";
+
+message RecommendationsRequest {
+    Point point = 1;
+}
+
+message RecommendationsResponse {
+    repeated Place places = 1;
+}
+
+message FilterRequest {
+    string text = 1;
+    Point point = 2;
+}
+
+message FilterResponse {
+    repeated Place places = 1;
+}
+
+message SongRecommendation {
+    Song song = 1;
+    string songRecommendationId = 2;
+    string recommendedBy = 3;
+    string recommendationCount = 4;
+    bool liked = 5;
+}
+
+message SongRecommendationsRequest {
+    int32 page = 1;
+    string placeId = 2;
+}
+
+message SongRecommendationsResponse {
+    repeated SongRecommendation songRecommendations = 1;
+}
+
+message PlaceDetailsRequest {
+    string placeId = 1;
+}
+
+message PlaceDetailsResponse {
+    Place place = 1;
+}
+
+message EditPlaceDetailsRequest {
+    string placeId = 1;
+    string name = 2;
+    repeated string genreIds = 3;
+    Point location = 4;
+    repeated Timeframe timeframes = 5;
+    repeated Photo photos = 6;
+    string description = 7;
+    int32 price = 8;
+    Photo profilePhoto = 9;
+}
+
+message EditPlaceDetailsResponse {
+    Place place = 1;
+}
+
+message CreatePlaceRequest {
+    string name = 1;
+    repeated string genreIds = 2;
+    Point location = 3;
+    repeated Timeframe timeframes = 4;
+    repeated Photo photos = 5;
+    string description = 6;
+    int32 price = 7;
+    Photo profilePhoto = 8;
+}
+
+message CreatePlaceResponse {
+    Place place = 1;
+}
+
+service PlacesService {
+    rpc Recommendations (RecommendationsRequest) returns (RecommendationsResponse) {}
+    rpc Filter (FilterRequest) returns (FilterResponse) {}
+    rpc SongRecommendations (SongRecommendationsRequest) returns (SongRecommendationsResponse) {}
+    rpc PlaceDetails (PlaceDetailsRequest) returns (PlaceDetailsResponse) {}
+    rpc EditPlaceDetails (EditPlaceDetailsRequest) returns (EditPlaceDetailsResponse) {}
+    rpc CreatePlace (CreatePlaceRequest) returns (CreatePlaceResponse) {}
+}

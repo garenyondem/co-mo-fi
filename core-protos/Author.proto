@@ -1,0 +1,9 @@
+syntax = "proto3";
+package Core.Backend;
+
+import "Photo.proto";
+
+message Author {
+    string name = 1;
+    Photo photo = 2;
+}

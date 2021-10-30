@@ -1,0 +1,46 @@
+syntax = "proto3";
+package Core.Backend;
+
+import "User.proto";
+import "Save.proto";
+import "Place.proto";
+
+message UserDetailsRequest {
+    string userId = 1;
+}
+
+message UserDetailsResponse {
+    User user = 1;
+}
+
+message EditDetailsRequest {
+    User user = 1;
+}
+
+message EditDetailsResponse {
+    User user = 1;
+}
+
+message SavesRequest {
+    int32 page = 1;
+    // We may want to filter results in the future
+}
+
+message SavesResponse {
+    repeated Save saves = 1;
+}
+
+message FollowsRequest {
+    int32 page = 1;
+}
+
+message FollowsResponse {
+    repeated Place places = 1;
+}
+
+service UserService {
+    rpc UserDetails (UserDetailsRequest) returns (UserDetailsResponse) {}
+    rpc EditDetails (EditDetailsRequest) returns (EditDetailsResponse) {}
+    rpc Saves (SavesRequest) returns (SavesResponse) {}
+    rpc Follows (FollowsRequest) returns (FollowsResponse) {}
+}

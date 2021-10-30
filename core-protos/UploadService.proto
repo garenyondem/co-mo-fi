@@ -1,0 +1,16 @@
+syntax = "proto3";
+package Core.Backend;
+
+import "Photo.proto";
+
+message UploadImageRequest {
+    bytes binary = 1;
+}
+
+message UploadImageResponse {
+    Photo photo = 1; 
+}
+
+service UploadService {
+    rpc UploadImage(stream UploadImageRequest) returns (UploadImageResponse); 
+}

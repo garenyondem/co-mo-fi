@@ -1,0 +1,24 @@
+syntax = "proto3";
+package Core.Backend;
+
+import "Genre.proto";
+import "Timeframe.proto";
+import "Photo.proto";
+import "Song.proto";
+import "Point.proto";
+
+message Place {
+    string name = 1;
+    string description = 2;
+    int32 price = 3;
+    Point location = 4;
+    repeated Genre genres = 5;
+    string rating = 6;
+    repeated Timeframe timeframes = 7;
+    repeated Photo photos = 8;
+    string distance = 9;
+    string placeId = 10;
+    Song nowPlaying = 11;
+    bool following = 12;
+    Photo profilePhoto = 13;
+}

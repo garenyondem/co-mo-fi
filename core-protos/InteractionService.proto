@@ -1,0 +1,41 @@
+syntax = "proto3";
+package Core.Backend;
+
+import "Empty.proto";
+
+message LikeRequest {
+    oneof id {
+        string postId = 1;
+        string songRecommendationId = 2;
+        string eventId = 3;
+    }
+}
+
+message SaveRequest {
+    oneof id {
+        string postId = 1;
+        string songRecommendationId = 2;
+        string highlightedPostId = 3;
+        string eventId = 4;
+    }
+}
+
+message FollowRequest {
+    oneof id {
+        string placeId = 1;
+    }
+}
+
+message NewSongRecommendationRequest {
+    string songId = 1;
+    oneof id {
+        string placeId = 2;
+    }
+}
+
+service InteractionService {
+    rpc Like (LikeRequest) returns (Empty) {}
+    rpc Save (SaveRequest) returns (Empty) {}
+    rpc Follow (FollowRequest) returns (Empty) {}
+    rpc NewSongRecommendation (NewSongRecommendationRequest) returns (Empty) {}
+}

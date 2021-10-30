@@ -1,0 +1,42 @@
+syntax = "proto3";
+package Core.Backend;
+
+import "Empty.proto";
+import "Post.proto";
+import "HighlightedPost.proto";
+
+message NewPostRequest {
+    Post post = 1;
+}
+
+message FeedRequest{
+    int32 page = 1;
+}
+
+message FeedResponse {
+    repeated Post posts = 1;
+}
+
+message HighlightsRequest {
+    int32 page = 1;
+}
+
+message HighlightsResponse {
+    repeated HighlightedPost highlights = 1;
+}
+
+message EditPostRequest {
+    Post post = 1;
+}
+
+message NewHighlightRequest {
+    HighlightedPost highlight = 1;
+}
+
+service FeedService {
+    rpc NewPost (NewPostRequest) returns (Empty) {}
+    rpc EditPost (EditPostRequest) returns (Empty) {}
+    rpc Feed (FeedRequest) returns (FeedResponse) {}
+    rpc Highlights (HighlightsRequest) returns (HighlightsResponse) {}
+    rpc NewHighlight (NewHighlightRequest) returns (Empty) {}
+}

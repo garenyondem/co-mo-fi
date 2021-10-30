@@ -1,0 +1,24 @@
+
+syntax = "proto3";
+package Core.Backend;
+
+import "Empty.proto";
+import "Song.proto";
+
+message AuthorizeResponse {
+    string url = 1;
+}
+
+message SearchRequest {
+    string text = 1;
+}
+
+message SearchResponse {
+    repeated Song songs = 1;
+}
+
+service SpotifyService {
+    rpc Authorize (Empty) returns (AuthorizeResponse) {}
+    rpc Search (SearchRequest) returns (SearchResponse) {}
+    rpc Disconnect (Empty) returns (Empty) {}
+}

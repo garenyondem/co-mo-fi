@@ -1,0 +1,6 @@
+syntax = "proto3";
+package Core.Backend;
+
+message ExternalProfileUrls {
+    string spotify = 1;
+}

@@ -1,0 +1,49 @@
+syntax = "proto3";
+package Core.Backend;
+
+import "Empty.proto";
+
+message RegisterRequest {
+    string name = 1;
+    string username = 2;
+    string email = 3;
+    string password = 4;
+}
+
+message RegisterResponse {
+
+}
+
+message LoginResponse {
+    string accessToken = 1;
+    string refreshToken = 2;
+}
+
+message LoginRequest {
+    string email = 1;
+    string password = 2;
+}
+
+message RefreshTokenRequest {
+    string refreshToken = 1;
+}
+
+message RefreshTokenResponse {
+    string accessToken = 1;
+}
+
+message RecoverRequest {
+    string email = 1;
+}
+
+message RecoverResponse {
+
+}
+
+service AccountService {
+    rpc Register (RegisterRequest) returns (RegisterResponse) {}
+    rpc Login (LoginRequest) returns (LoginResponse) {}
+    rpc Logout (Empty) returns (Empty) {}
+    rpc RefreshToken (RefreshTokenRequest) returns (RefreshTokenResponse) {}
+    rpc Recover (RecoverRequest) returns (RecoverResponse) {} // TODO: Decide if SMS or Email validation?
+}

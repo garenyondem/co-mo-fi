@@ -1,0 +1,18 @@
+syntax = "proto3";
+package Core.Backend;
+
+import "Point.proto";
+import "Photo.proto";
+
+message Event {
+    string title = 1;
+    Point location = 2;
+    int64 startDateTime = 3;
+    int64 endDateTime = 4;
+    int32 quota = 5;
+    bool attending = 6;
+    string eventId = 7;
+    string placeId = 8;
+    repeated Photo photos = 9;
+    bool saved = 10;
+}

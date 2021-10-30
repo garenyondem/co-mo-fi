@@ -1,0 +1,20 @@
+# Git
+.git
+.gitignore
+# Docker configuration
+Dockerfile
+docker-compose*
+.dockerignore
+# NPM dependencies
+node_modules
+npm-debug.log
+# VsCode configuration
+.vscode
+# Other
+*.md
+*.env
+.nvmrc
+.editorconfig
+.prettierrc.yml
+.lintstagedrc.yml
+.huskyrc.yml

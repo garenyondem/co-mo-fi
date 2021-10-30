@@ -1,0 +1,32 @@
+syntax = "proto3";
+package Core.Backend;
+
+import "Empty.proto";
+import "Event.proto";
+
+
+message NewEventRequest {
+    Event event = 1;
+}
+
+message EventDetailsRequest {
+    string eventId = 1;
+}
+
+message EventDetailsResponse {
+    Event event = 1;
+}
+
+message AttendEventRequest {
+    string eventId = 1;
+}
+
+message LeaveEventRequest {
+    string eventId = 1;
+}
+
+service EventService {
+    rpc NewEvent (NewEventRequest) returns (Empty) {}
+    rpc EventDetails (EventDetailsRequest) returns (EventDetailsResponse) {}
+    rpc AttendEvent (AttendEventRequest) returns (Empty) {}
+}

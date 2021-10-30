@@ -1,0 +1,7 @@
+syntax = "proto3";
+package Core.Backend;
+
+message Point {
+    double lat = 1;
+    double lon = 2;
+}

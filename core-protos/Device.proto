@@ -1,0 +1,30 @@
+syntax = "proto3";
+package Core.Backend;
+
+enum OS {
+    IOS = 0;
+    ANDROID = 1;
+}
+
+message IosIdentifier {
+    string uuid = 1; // Universally unique identifier
+    string udid = 2; // Unique device identifier
+    string osVersion = 3;
+}
+
+message AndroidIdentifier {
+    string advertisingId = 1;
+    string firebaseToken = 2;
+    string apiLevel = 3;
+}
+
+message Device {
+    OS os = 1;
+    string manufacturer = 2;
+    string model = 3;
+    string locale = 4;
+    oneof identifier {
+        IosIdentifier iosIdentifier = 5;
+        AndroidIdentifier androidIdentifier = 6;
+    }
+}

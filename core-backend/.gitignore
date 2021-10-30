@@ -1,0 +1,9 @@
+node_modules
+.vscode
+types/*
+.env
+.env.test
+todos.md
+*.csv
+debug.log
+error.log

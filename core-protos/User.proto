@@ -1,0 +1,23 @@
+syntax = "proto3";
+package Core.Backend;
+
+import "Genre.proto";
+import "Photo.proto";
+import "ExternalProfileUrls.proto";
+
+enum USER_TYPE {
+    STANDARD = 0;
+    EMPLOYEE = 1;
+    EMPLOYER = 2;
+}
+
+message User {
+    string name = 1;
+    string username = 2;
+    string email = 3;
+    string userId = 4;
+    USER_TYPE type = 5;
+    ExternalProfileUrls externalProfileUrls = 6;
+    repeated Genre favouriteGenres = 7;
+    Photo profilePhoto = 8;
+}

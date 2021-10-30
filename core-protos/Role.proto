@@ -1,0 +1,20 @@
+syntax = "proto3";
+package Core.Backend;
+
+enum ROLE_TYPE {
+    ROLE_TYPE_STANDARD = 0;
+    ROLE_TYPE_EMPLOYEE = 1;
+    ROLE_TYPE_EMPLOYER = 2;
+    ROLE_TYPE_ADMIN = 3;
+}
+
+message Role {
+    string name = 1;
+    ROLE_TYPE type = 2;
+    RoleAttributes attributes = 3;
+}
+
+message RoleAttributes {
+    map<string, bool> place = 1;
+    map<string, bool> feed = 2;
+}

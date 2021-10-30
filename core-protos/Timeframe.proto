@@ -1,0 +1,8 @@
+syntax = "proto3";
+package Core.Backend;
+
+message Timeframe {
+    int32 day = 1;
+    string start = 2;
+    string end = 3;
+}

@@ -1,0 +1,22 @@
+syntax = "proto3";
+package Core.Backend;
+
+import "Photo.proto";
+import "Author.proto";
+
+enum HIGHLIGHTED_POST_TYPE {
+    PLACE = 0;
+    EVENT = 1;
+    MISC = 2;
+}
+
+message HighlightedPost {
+    string text = 1;
+    repeated Photo photos = 2;
+    Author author = 3;
+    string placeId = 4;
+    string eventId = 5; 
+    HIGHLIGHTED_POST_TYPE type = 6;
+    string highlightedPostId = 7;
+    bool saved = 8;
+}

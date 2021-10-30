@@ -1,0 +1,12 @@
+syntax = "proto3";
+package Core.Backend;
+import "Point.proto";
+import "Empty.proto";
+
+message UpdateRequest {
+    Point point = 1;
+}
+
+service LocationService {
+    rpc Update (UpdateRequest) returns (Empty) {}
+}

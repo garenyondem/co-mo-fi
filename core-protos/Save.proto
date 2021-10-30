@@ -1,0 +1,20 @@
+syntax = "proto3";
+package Core.Backend;
+
+import "Post.proto";
+import "HighlightedPost.proto";
+import "Event.proto";
+
+message Save {
+    enum SAVED_ITEM_TYPE {
+        POST = 0;
+        HIGHLIGHTED_POST = 1;
+        EVENT = 2;
+    }
+    SAVED_ITEM_TYPE type = 1;
+    oneof item {
+        Post post = 2;
+        HighlightedPost highlightedPost = 3;
+        Event event = 4;
+    }
+}

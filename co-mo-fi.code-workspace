@@ -1,0 +1,17 @@
+{
+	"folders": [
+		{
+			"path": "core-backend"
+		},
+		{
+			"path": "core-mail-verifier"
+		},
+		{
+			"path": "core-spotify-auth"
+		},
+		{
+			"path": "core-protos"
+		}
+	],
+	"settings": {}
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+package Core.Backend;
+
+import "Genre.proto";
+
+message AvailableGenresRequest {
+}
+
+message AvailableGenresResponse {
+    repeated Genre genres = 1;
+}
+
+service MusicService {
+    rpc AvailableGenres (AvailableGenresRequest) returns (AvailableGenresResponse) {}
+}

@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width" />
+        <meta http-equiv="Content-Type" content="text/html charset=UTF-8" />
+        <title>Coffee & Mood & Fidelity</title>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/platform/1.3.5/platform.min.js"></script>
+        <script type="text/javascript">
+            function setRedirectUri() {
+                var uri = platform.manufacturer == 'Apple' ? 'http://google.com' : 'http://facebook.com';
+                var redirectBtn = document.getElementById('redirect_btn');
+                redirectBtn.href = uri;
+            }
+        </script>
+        <style>
+            .container {
+                height: 250px;
+                position: relative;
+            }
+            .center {
+                margin: 0;
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                -ms-transform: translate(-50%, -50%);
+                transform: translate(-50%, -50%);
+            }
+        </style>
+    </head>
+
+    <body onload="setRedirectUri();">
+        <div class="container">
+            <div class="center">
+                <center>
+                    <span style="color: rgb(105, 105, 105); font-size: 18px;"
+                        >Hurray! Your account has been activated successfully.</span
+                    ><br />
+                    <span style="color: rgb(105, 105, 105); font-size: 18px;"
+                        >You can now login using your email address.</span
+                    ><br />
+                </center>
+            </div>
+        </div>
+    </body>
+</html>

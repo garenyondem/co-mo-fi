@@ -1,0 +1,7 @@
+syntax = "proto3";
+package Core.Backend;
+
+message Genre {
+    string name = 1;
+    string genreId = 2;
+}

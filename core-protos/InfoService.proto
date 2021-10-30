@@ -1,0 +1,30 @@
+syntax = "proto3";
+package Core.Backend;
+
+import "Device.proto";
+import "App.proto";
+import "Genre.proto";
+import "LinkedAccount.proto";
+import "Role.proto";
+
+message ClientInfoRequest {
+    Device device = 1;
+    App app = 2;
+}
+
+enum DISTANCE_UNITS {
+    IMPERIAL = 0;
+    METRIC = 1;
+}
+
+message ClientInfoResponse {
+    DISTANCE_UNITS distanceUnit = 1;
+    repeated Genre genreRecommendations = 2;
+    repeated LinkedAccount linkedAccounts = 3;
+    Role roleDetails = 4;
+}
+
+service InfoService {
+    // Response- A/B testing settings or global on/off switches
+    rpc ClientInfo (ClientInfoRequest) returns (ClientInfoResponse) {}
+}

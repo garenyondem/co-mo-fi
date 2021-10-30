@@ -1,0 +1,7 @@
+syntax = "proto3";
+package Core.Backend;
+
+message App {
+    string version = 1;
+    string buildNumber = 2;
+}

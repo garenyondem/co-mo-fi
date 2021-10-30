@@ -1,0 +1,16 @@
+syntax = "proto3";
+package Core.Backend;
+
+import "Photo.proto";
+
+enum LINKED_ACCOUNT_TYPE {
+    LINKED_ACCOUNT_TYPE_USER = 0;
+    LINKED_ACCOUNT_TYPE_PLACE = 1;
+}
+
+message LinkedAccount {
+    string name = 1;
+    Photo profilePhoto = 2;
+    LINKED_ACCOUNT_TYPE type = 3;
+    string placeId = 4;
+}
