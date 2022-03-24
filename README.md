@@ -1,7 +1,8 @@
 # Coffee & Mood & Fidelity
-Matching you with the Coffee shops that play the songs you like.
+This project is targeted at people who frequently visit coffee shops and enjoy music enthusiastically. As a side effect, it will also enable coffee shops to play songs that will increase the number of their visitors.
 
-Those folders were used to be four different repos. They are merged into a monorepo for display. 
+The projects used to be separated into four different repositories and three services. Merged into a monorepo for convenience before making it public.
+
 
 ---
 #### Tech stack
@@ -14,7 +15,7 @@ Those folders were used to be four different repos. They are merged into a monor
 * Docker
 
 #### Services
-* Spotify 
-* Mailgun
+* Spotify - `Basically the foundation of this project.`
+* Mailgun - `Used for email verification, password reset.`
 * AWS S3
-* Slack
+* Slack - `Used for communication of generic service health alerts.`
